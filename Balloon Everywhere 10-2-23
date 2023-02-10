@@ -1,0 +1,9 @@
+class Solution{
+public:
+    int maxInstance(string s){
+        unordered_map<char, int> mp;
+        for(auto ch: s) mp[ch]++;
+        
+        return min({mp['b'], mp['a'], mp['l'] / 2, mp['o'] / 2, mp['n']});
+    }
+};
