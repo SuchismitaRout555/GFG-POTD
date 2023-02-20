@@ -1,0 +1,18 @@
+class Solution{   
+public:
+    int countPaths(int N){
+        int mod= 1e9 + 7;
+        long long  ans= 0;
+        long long prev= 0;
+        long long  curr= 1;
+        if(N==1)return 0;
+        if(N==2)return 3;
+        for(int i= 3;i<=N;i++){
+            long long t= curr;
+            curr= ((2*curr) + (3*prev))%mod;
+            prev= t;
+        }
+        return ans= ((3*curr)%mod);
+        // code here 
+    }
+};
